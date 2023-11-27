@@ -75,12 +75,12 @@ set.seed(2023)
 # H0 + dense
 out.data.null <- gene_data(n=200, px=600, pz=600, s.alphax=10, s.gammax=10, s.alphaz=300, 
                            s.gammaz=10, varsigma=0, IV.strength=1, a0=0)
-pval.null <- HDOverTest_IV(D=out.data.null$D, X=out.data.null$X, Z=out.data.null$Z, Y=out.data.null$Y)
+pval.null <- HDOverTest(D=out.data.null$D, X=out.data.null$X, Z=out.data.null$Z, Y=out.data.null$Y)
 cat("(n=200, px=600, pz=600, a0=0, gammaz1, s.alphaz=0.5pz, varsigma=0) for H0+dense,", "p-value is", pval.null)
 
 # H1 + dense
 out.data.alter <- gene_data(n=200, px=600, pz=600, s.alphax=10, s.gammax=10, s.alphaz=300, 
                            s.gammaz=10, varsigma=0.5, IV.strength=1, a0=0)
-pval.alter <- HDOverTest_IV(D=out.data.alter$D, X=out.data.alter$X, Z=out.data.alter$Z, Y=out.data.alter$Y)
+pval.alter <- HDOverTest(D=out.data.alter$D, X=out.data.alter$X, Z=out.data.alter$Z, Y=out.data.alter$Y)
 cat("(n=200, px=600, pz=600, a0=0, gammaz1, s.alphaz=0.5pz, varsigma=0.5) for H1+dense,", "p-value is", pval.alter)
 ```
