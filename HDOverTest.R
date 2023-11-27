@@ -1,9 +1,7 @@
 library(MASS)
 library(glmnet)
-library(matrixStats) 
-library(dplyr)
 
-HDOverTest_IV <- function(D, X, Z, Y) {
+HDOverTest <- function(D, X, Z, Y) {
   n <- length(Y)
   px <- ncol(X); pz <- ncol(Z); p <- px + pz
   
