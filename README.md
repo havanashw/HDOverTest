@@ -1,19 +1,32 @@
 # HDOverTest
 R code for "Testing overidentifying restrictions on high-dimensional instruments and covariates with an application".
 
+## Usage
+
+```{R}
+HDOverTest_IV(D, X, Z, Y)
+```
+
+## Required Packages
+- `MASS`
+- `glmnet`
+
+## Inputs
+- `D`: Endogenous treatment variable with length n.
+- `X`: Exogenous covariates, a matrix of n*px, where px is the dimension of `X`.
+- `Z`: Instrumental variables, a matrix of n*pz, where pz is the dimension of `Z`.
+- `Y`: Response variable with length n.
 
 ## Examples
 ```{R}
 library(MASS)
 library(glmnet)
-library(matrixStats) 
-library(dplyr)
 
 source("HDOverTest.R")
 
-## generate data
-gene_data <- function(n=100, px=100, pz=50, s.alphax=10, s.gammax=10, s.alphaz=10, s.gammaz=10,
-                      varsigma=5, IV.strength=1, a0=0) {
+## generate data (See the Simulations section of the paper for detailed descriptions)
+gene_data <- function(n, px, pz, s.alphax, s.gammax, s.alphaz,
+                      s.gammaz, varsigma, IV.strength, a0) {
   # the dimension of V=(X, Z)
   p <- px + pz
   
