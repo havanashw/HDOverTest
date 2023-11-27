@@ -4,7 +4,7 @@ R code for "Testing overidentifying restrictions on high-dimensional instruments
 ## Usage
 
 ```{R}
-HDOverTest_IV(D, X, Z, Y)
+HDOverTest(D, X, Z, Y)
 ```
 
 ## Required Packages
