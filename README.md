@@ -8,7 +8,6 @@ HDOverTest(D, X, Z, Y)
 ```
 
 ## Required Packages
-- `MASS`
 - `glmnet`
 
 ## Inputs
