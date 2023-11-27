@@ -1,4 +1,3 @@
-library(MASS)
 library(glmnet)
 
 HDOverTest <- function(D, X, Z, Y) {
